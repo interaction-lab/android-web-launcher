@@ -4,9 +4,9 @@ STEPS TO ADD A NEW ACTIVITY TO THE LAUNCHER:
 
 A) Read if number of activities less than 6:
 
-1. Add an image of size around 320x320px as the logo for that activity, should also contain the name of the activity if there is a need to display that. This image needs to be added to the directory './app/src/main/res/drawable/'
+1. Add an image of size around 320x320px as the logo for that activity, should also contain the name of the activity if there is a need to display that. This image needs to be added to the directory './app/src/main/res/drawable/'. Replace the relevant image in that directory, or create an image with the name 'activity<X>.png'
 
-2. In './app/src/main/res/values/strings.xml' add an entry of the form 
+2. In './app/src/main/res/values/strings.xml' change YOUR_CUSTOM_URL in the entry of the form 
 	<string name="url_activityX">YOUR_CUSTOM_URL</string>
 as can be seen in that file. 'X' is again the number of the activity you are adding. YOUR_CUSTOM_URL is the URL that that imagebutton must point to.
 
