@@ -2,6 +2,16 @@ Android launcher application
 
 STEPS TO ADD A NEW ACTIVITY TO THE LAUNCHER:
 
+A) Read if number of activities less than 6:
+
+1. Add an image of size around 320x320px as the logo for that activity, should also contain the name of the activity if there is a need to display that. This image needs to be added to the directory './app/src/main/res/drawable/'
+
+2. In './app/src/main/res/values/strings.xml' add an entry of the form 
+	<string name="url_activityX">YOUR_CUSTOM_URL</string>
+as can be seen in that file. 'X' is again the number of the activity you are adding. YOUR_CUSTOM_URL is the URL that that imagebutton must point to.
+
+B) Read if number of activites more than 6: 
+
 1. Add an image of size around 320x320px as the logo for that activity, should also contain the name of the activity if there is a need to display that. This image needs to be added to the directory './app/src/main/res/drawable/'
 
 2. Name it 'activity<X>.png' where you should replace <X> with the number of that activity, e.g. 'activity2.png'
@@ -19,9 +29,10 @@ as can be seen in that file. 'X' is again the number of the activity you are add
 	Note that while creating the ImageButton, in findViewById(R.id.<X>), <X> must match the android:id attribute in step 3.
 	Note that while creating the onClickListener, in getResources().getString(R.string.url_activityX) the X must match the number of activity as in step 5.
 
+----------------------------------------------
+
 STEPS TO REMOVE AN ACTIVITY FROM THE LAUNCHER
 Undo everything done in the above section.
-
 
 
 Right now, this application supports high resolution screens such as those of the Samsung Galaxy View. For better results on lower resolution screens, the images and logo will have to be re-sized, according to the guides available at Google's SDK tutorial website.
