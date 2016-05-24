@@ -8,7 +8,9 @@
     <string name="url_activity2">http://www.google.com</string>
     <string name="url_activity3">http://www.google.com</string>
     <!--Below here add your own string resources for new activities -->
-    <!--<string name="url_activity4">http://www.google.com</string>-->
-    <!--<string name="url_activity5">http://www.google.com</string>-->
-    <string name="exit">Exit</string>
+    <string name="url_activity4">http://www.google.com</string>
+    <string name="url_activity5">http://www.google.com</string>
+    <string name="url_activity6">http://www.google.com</string>
+    <string name="imagedescription">Image thumbnail</string>
+    <!--<string name="exit">Exit</string>-->
 </resources>

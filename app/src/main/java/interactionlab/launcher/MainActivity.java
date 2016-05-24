@@ -25,7 +25,10 @@ public class MainActivity extends AppCompatActivity {
         ImageButton imagebutton1=(ImageButton) findViewById(R.id.activity1);
         ImageButton imagebutton2=(ImageButton) findViewById(R.id.activity2);
         ImageButton imagebutton3=(ImageButton) findViewById(R.id.activity3);
-        //ImageButton imagebutton4=(ImageButton) findViewById(R.id.activity4);
+        ImageButton imagebutton4=(ImageButton) findViewById(R.id.activity4);
+        ImageButton imagebutton5=(ImageButton) findViewById(R.id.activity5);
+        ImageButton imagebutton6=(ImageButton) findViewById(R.id.activity6);
+        //ImageButton imagebutton7=(ImageButton) findViewById(R.id.activity7);
 
         //CREATING ONCLICK_LISTENERS for each ImageButton
         imagebutton1.setOnClickListener(new View.OnClickListener() {
@@ -55,12 +58,39 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent1);
             }
         });
-        /*
         imagebutton4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent1 = new Intent(context, WebViewPage.class);
                 String mystring = getResources().getString(R.string.url_activity4);
+                intent1.putExtra("activityurl",mystring);
+                startActivity(intent1);
+            }
+        });
+        imagebutton5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent1 = new Intent(context, WebViewPage.class);
+                String mystring = getResources().getString(R.string.url_activity5);
+                intent1.putExtra("activityurl",mystring);
+                startActivity(intent1);
+            }
+        });
+        imagebutton6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent1 = new Intent(context, WebViewPage.class);
+                String mystring = getResources().getString(R.string.url_activity6);
+                intent1.putExtra("activityurl",mystring);
+                startActivity(intent1);
+            }
+        });
+        /*
+        imagebutton7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent1 = new Intent(context, WebViewPage.class);
+                String mystring = getResources().getString(R.string.url_activity7);
                 intent1.putExtra("activityurl",mystring);
                 startActivity(intent1);
             }
@@ -72,7 +102,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
+        //getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
 
@@ -84,17 +114,19 @@ public class MainActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.exit) {
+        /*if (id == R.id.exit) {
             exit();
             return true;
-        }
+        }*/
 
         return super.onOptionsItemSelected(item);
     }
+
     public void onBackPressed() {
         // nothing to do here
         // … really
     }
+
     public void exit(){
         Intent intent = new Intent(Intent.ACTION_MAIN);
         intent.addCategory(Intent.CATEGORY_HOME);
