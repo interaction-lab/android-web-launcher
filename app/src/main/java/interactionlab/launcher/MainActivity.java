@@ -1,9 +1,15 @@
 package interactionlab.launcher;
 
+import android.app.ActivityManager;
 import android.content.Context;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.SpannableString;
+import android.text.style.BackgroundColorSpan;
+import android.text.style.ForegroundColorSpan;
+import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -11,7 +17,7 @@ import android.content.Intent;
 import android.widget.ImageButton;
 
 public class MainActivity extends AppCompatActivity {
-
+    protected boolean inAdminMode=false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         final Context context=this;
@@ -96,13 +102,22 @@ public class MainActivity extends AppCompatActivity {
             }
         });
          */
-        }
 
+
+        //
+        }
+    public void onResume(){
+        super.onResume();
+        View decorView = this.getWindow().getDecorView();
+        //To hide navigation bar in webview, uncomment the commented part in the line below and remove the semicolon.
+        int uiOptions =  View.SYSTEM_UI_FLAG_HIDE_NAVIGATION|View.SYSTEM_UI_FLAG_FULLSCREEN;
+        decorView.setSystemUiVisibility(uiOptions);
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        //getMenuInflater().inflate(R.menu.menu_main, menu);
+        getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
 
@@ -114,10 +129,14 @@ public class MainActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        /*if (id == R.id.exit) {
-            exit();
+        if (id == R.id.adminMode) {
+            inAdminMode=!inAdminMode;
+            SpannableString sWhileON = new SpannableString("Turn Admin OFF");
+            SpannableString sWhileOFF = new SpannableString("Turn Admin ON");
+            if (inAdminMode) item.setTitle(sWhileON);
+            else item.setTitle(sWhileOFF);
             return true;
-        }*/
+        }
 
         return super.onOptionsItemSelected(item);
     }
@@ -134,4 +153,18 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void onWindowFocusChanged(boolean hasFocus) {
+        super.onWindowFocusChanged(hasFocus);
+        Log.d("Focus debug", "Focus changed !");
+        if(!hasFocus) {
+            Log.d("Focus debug", "Lost focus !");
+            if (!inAdminMode) {
+                Intent closeDialog = new Intent(Intent.ACTION_CLOSE_SYSTEM_DIALOGS);
+                sendBroadcast(closeDialog);
+            }
+        }
+
+    }
+
 }
+

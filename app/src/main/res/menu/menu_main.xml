@@ -2,7 +2,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="interactionlab.launcher.MainActivity">
-    <!--<item
-        android:id="@+id/exit"
-        android:title="@string/exit"/>-->
+    <item
+        android:id="@+id/adminMode"
+        android:title="@string/adminMode"/>
 </menu>
