@@ -4,13 +4,13 @@
     <string name="button_send">Send</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_display_message">MyMessage</string>
-    <string name="url_activity1">http://www.google.com</string>
-    <string name="url_activity2">http://www.google.com</string>
-    <string name="url_activity3">http://www.google.com</string>
+    <string name="url_activity1">http://robotics.usc.edu/~expeditions</string>
+    <string name="url_activity2">http://robotics.usc.edu/~expeditions/app2</string>
+    <string name="url_activity3">http://robotics.usc.edu/~expeditions/app3</string>
     <!--Below here add your own string resources for new activities -->
-    <string name="url_activity4">http://www.google.com</string>
-    <string name="url_activity5">http://www.google.com</string>
-    <string name="url_activity6">http://www.google.com</string>
+    <string name="url_activity4">http://robotics.usc.edu/~expeditions/app4</string>
+    <string name="url_activity5">http://robotics.usc.edu/~expeditions/app5</string>
+    <string name="url_activity6">http://robotics.usc.edu/~expeditions/app6</string>
     <string name="imagedescription">Image thumbnail</string>
     <string name="adminMode">Turn Admin ON</string>
 </resources>

@@ -151,6 +151,7 @@ public class MainActivity extends AppCompatActivity {
     public void onBackPressed() {
         // nothing to do here
         // … really
+        
     }
 
     public void exit(){
